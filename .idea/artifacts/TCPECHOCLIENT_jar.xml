@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TCPECHOCLIENT:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/TCPECHOCLIENT_jar</output-path>
+    <root id="archive" name="TCPECHOCLIENT.jar">
+      <element id="module-output" name="TCPECHOCLIENT" />
+    </root>
+  </artifact>
+</component>
