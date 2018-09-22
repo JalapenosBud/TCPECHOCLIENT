@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 class UDPClient
 {
+    private static final int PORT = 1234;
     DatagramSocket clientSocket;
 
     {
@@ -25,25 +26,41 @@ class UDPClient
             e.printStackTrace();
         }
     }
+    
+    public void runThisPls()
+    {
+    
+    }
 
     public void run() throws Exception
     {
         Scanner scanner = new Scanner(System.in);
+        boolean hasTerminated = false;
+    
+        System.out.println("1 to send msg\n***QUIT*** to quit the application");
+        
         String menuInput = scanner.nextLine();
 
-        switch (menuInput)
+        
+        
+        while(!hasTerminated)
         {
-            case "1":
-                System.out.println("Enter a message: ");
-                sendMessages();
-                break;
-            case "***QUIT***":
-                System.out.println("Quitting");
-                clientSocket.close();
-                System.exit(1);
-                break;
-
+            switch (menuInput)
+            {
+                case "1":
+                    System.out.println("Enter a message: ");
+                    sendMessages();
+                    break;
+                case "***QUIT***":
+                    System.out.println("Quitting");
+                    clientSocket.close();
+                    hasTerminated = true;
+                    System.exit(1);
+                    break;
+        
+            }
         }
+        
 
     }
 
@@ -58,7 +75,7 @@ class UDPClient
         String sentence = inFromUser.readLine();
         sendData = sentence.getBytes();
 
-        DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, 9876);
+        DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, PORT);
         clientSocket.send(sendPacket);
         DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
         clientSocket.receive(receivePacket);

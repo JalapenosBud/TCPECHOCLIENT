@@ -12,6 +12,7 @@ public class UDPEchoClient {
     private static DatagramSocket datagramSocket;
     private static DatagramPacket inPacket, outPacket;
     private static byte[] buffer;
+    
     public void sendMessage() throws SocketException {
         try{
             host = InetAddress.getLocalHost();
