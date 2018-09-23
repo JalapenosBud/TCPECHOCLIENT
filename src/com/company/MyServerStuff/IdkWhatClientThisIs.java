@@ -1,4 +1,4 @@
-package com.company;
+package com.company.MyServerStuff;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,11 +8,11 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.Scanner;
 
-public class NIOClient {
+public class IdkWhatClientThisIs {
     private Socket clientSocket = null;
     private static final int PORT = 1234;
     
-    public NIOClient()
+    public IdkWhatClientThisIs()
     {
         String fromServer = "";
         String fromUser = "";
@@ -31,7 +31,7 @@ public class NIOClient {
             //client listens for server input first and checks if it isnt null
             while(!fromUser.equals("**quit**"))
             {
-                /*fromServer = in.readLine();
+                fromServer = in.readLine();
                 if(fromServer != null)
                 {
                     System.out.println(fromServer);
@@ -39,7 +39,7 @@ public class NIOClient {
                 else{
                     System.out.print("> ");
                     fromUser = standardInput.nextLine();
-                }*/
+                }
     
                 System.out.print("> ");
                 fromUser = standardInput.nextLine();
